@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1">
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="spur">Spur:</label>
+                    <input type="number" id="spur" class="form-control" placeholder="Spur" value="72" value="{{spur}}" (change)="runRollOut($event)">
+
+                </div>
+                <div class="col-md-12">
+                    <label for="pinion">Pinion:</label>
+                    <input type="number" id="pinion" class="form-control" placeholder="Pinion" value="{{pinion}}" min="18" max="70" (change)="runRollOut($event)">
+
+                </div>
+                <div class="col-md-12">
+                    <label for="tireDia">Tire Diameter:</label>
+                    <input type="number" id="tireDia" class="form-control" placeholder="Tire Diameter" value="{{tireDiameter}}" min="36" max="60" step="1" (change)="runRollOut($event)">
+
+                </div>
+                <div class="col-md-12">
+                    <label for="fdrive">Internal Drive Ratio:</label>
+                    <input type="number" id="fdrive" class="form-control" placeholder="Final Drive" value="{{fDrive}}" min="1" max="2" step=".1" (change)="runRollOut($event)">
+
+                </div>
+            </div>
+        </div>
+      <div class="col-md-11">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Roll Out</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">FDR</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane  show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+            <div id="ro_output" class="row">
+              <div class='col-md-1 bg-dark'>&nbsp;</div>
+              <div class='col-md-1 text-center' *ngFor="let header of headers" [ngClass]="{'bg-dark':header.value != startSpur,'bg-danger':header.value==startSpur}">{{ header.value }}</div>
+            </div>
+            <div class="row" *ngFor="let pinion of pinions; let p = index">
+              <div class="col-md-1 text-center" [ngClass]="{'bg-danger':pinion.value==startPinion}">{{ pinion.value }}</div>
+              <div class="col-md-1 text-center" *ngFor="let rollOut of pinion.rollOuts; let r = index">
+                <div [ngClass]="{'bg-danger':calculateRollOut(tireDiameter,startSpur,startPinion,fDrive)==rollOut && pinion.value == startPinion}" >{{ rollOut }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane " id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            <div class="row" id="fdr_output">
+              <div class='col-md-1 bg-dark'>&nbsp;</div>
+              <div class='col-md-1 text-center' [ngClass]="{'bg-dark':header.value != startSpur,'bg-danger':header.value==startSpur}" *ngFor="let header of headers">{{ header.value }}</div>
+            </div>
+            <div class="row" *ngFor="let pinion of pinions; let p = index">
+              <div class="col-md-1 text-center" [ngClass]="{'bg-danger':pinion.value==startPinion}">{{ pinion.value}}</div>
+              <div class="col-md-1 text-center" *ngFor="let fdr of pinion.fdrs; let r = index">
+                <div [ngClass]="{'bg-danger':calcFDR(startSpur,startPinion,fDrive)==fdr && pinion.value == startPinion}" >{{ fdr }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+
+    <div class="row">
+
+</div>
+
+
+</div>

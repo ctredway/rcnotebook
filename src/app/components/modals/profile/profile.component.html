@@ -1,0 +1,89 @@
+<div class="modal fade" id="userSettingsModal" tabindex="-1" aria-labelledby="userSettingsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userSettingsModalLabel">User Settings</h5>
+          <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                Profile
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                Secruity & Privacy
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                Password
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="spacer-lg"></div>
+              <form action="">
+                <h6>Discussion Avatar</h6>
+                <div class="input-group mb-3">
+                  <input type="file" class="form-control" id="avatarUpload">
+                </div>
+              </form>
+              <form>
+                <h6>First & Last Name</h6>
+                <div class="form-row d-flex">
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="First name">
+                  </div>
+                  <div class="spacer-sm"></div>
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="Last name">
+                  </div>
+                </div>
+                <div class="spacer-sm"></div>
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                      <label class="form-check-label" for="flexSwitchCheckChecked">Show names instead of username</label>
+                    </div>
+                    <div id="namesHelpBlock" class="form-text">
+                      This will display your first and last name in discussions instead of your username.
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <form action="">
+                <div class="spacer-md"></div>
+                Page 2
+              </form>
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+              <div class="spacer-md"></div>
+              <h6>Set New Password</h6>
+              <form action="">
+                <div class="flex-wrap">
+                  <label for="exampleInputEmail1" class="form-label">New Password</label>
+                  <input type="password" class="form-control" id="password-signup" placeholder="" aria-label="Password" aria-describedby="addon-wrapping" required>
+                </div>
+              <div class="spacer-sm"></div>
+                <div class="flex-wrap">
+                  <label for="exampleInputEmail1" class="form-label">Confirm New Password</label>
+                  <input type="password" class="form-control" id="password-confirm-signup" placeholder="" aria-label="Password" aria-describedby="addon-wrapping" required>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-target="#discardSettingChangesConfirmModal" data-bs-toggle="modal">Discard Changes</button>
+          <button type="button" class="btn btn-success">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
