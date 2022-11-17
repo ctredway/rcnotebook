@@ -10,6 +10,9 @@ import { ProfileComponent } from './components/modals/profile/profile.component'
 import { LogoutComponent } from './components/modals/logout/logout.component';
 import { RolloutComponent } from './components/rollout/rollout.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
+import { FaqComponent } from './components/faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     ProfileComponent,
     LogoutComponent,
     RolloutComponent,
-    HomepageComponent
+    HomepageComponent,
+    AboutusComponent,
+    ContactusComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
